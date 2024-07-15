@@ -21,10 +21,12 @@ body {
 
 p {
     text-align: center;
+    font-size: 3vw;
 }
 
 input {
-    width: 50%;
+    width: 20vw;
+    min-width: 50%;
     padding: 10px;
     margin: 20px;
     background-color: #A7E6FF;
@@ -47,7 +49,8 @@ input:focus::-webkit-input-placeholder {
 }
 
 button {
-    width: 50%;
+    width: 20vw;
+    min-width: 50%;
     background-color: #4a0099;
     padding: 10px;
     border: none;

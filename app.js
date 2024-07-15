@@ -40,9 +40,15 @@ let count = 1;
 function myFunction() {
     // const div = document.getElementById("container");
     // const input = document.getElementById("range");
-    console.log(range);
     // const btn = document.getElementById("button");
     let maxNum = input.value;
+
+    while (!maxNum) {
+        input.value = "";
+        return document.getElementById("result").innerText = `Enter a number and click the button`;
+
+    }
+    document.getElementById("result").innerText = ``;
     const randomNum = Math.floor(Math.random() * maxNum) + 1;
 
     console.log(randomNum);
@@ -65,7 +71,12 @@ function myFunction() {
 function guess(randomNum) {
     console.log(count);
     let userGuess = parseInt(newInput.value);
+    while (!userGuess) {
+        input.value = "";
+        return document.getElementById("result").innerText = `Guess a number and click the button`;
 
+    }
+    document.getElementById("result").innerText = ``;
     if (userGuess === randomNum) {
         if (count === 1) {
             newBtn.remove();
@@ -77,11 +88,22 @@ function guess(randomNum) {
             newBtn.remove();
             newInput.remove();
             return document.getElementById("result").innerText = `You took ${count} chances to guess the number `;
+
+
         }
     }
     else {
         count++;
-        return document.getElementById("result").innerText = 'No, Try again';
+        newInput.value = '';
+        if (userGuess > randomNum) {
+            return document.getElementById("result").innerText = `No, try a lesser number than ${userGuess}`;
+        }
+        else {
+            return document.getElementById("result").innerText = `No, try a higher number than ${userGuess}`;
+        }
+
+
 
     }
 }
+
