@@ -71,6 +71,7 @@ function myFunction() {
 function guess(randomNum) {
     console.log(count);
     let userGuess = parseInt(newInput.value);
+    let restart = document.getElementById('restart');
     while (!userGuess) {
         input.value = "";
         return document.getElementById("result").innerText = `Guess a number and click the button`;
@@ -81,12 +82,14 @@ function guess(randomNum) {
         if (count === 1) {
             newBtn.remove();
             newInput.remove();
-            return document.getElementById("result").innerText = `WOW! You guessed the random number in a single try`;
+            restart.style.display = 'block';
+            return document.getElementById("result").innerText = `WOW! You guessed the random number in a single try!!!`;
 
         }
         else {
             newBtn.remove();
             newInput.remove();
+            restart.style.display = 'block';
             return document.getElementById("result").innerText = `You took ${count} chances to guess the number `;
 
 
@@ -105,5 +108,9 @@ function guess(randomNum) {
 
 
     }
+}
+
+function restart() {
+    location.reload();
 }
 
