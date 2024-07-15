@@ -37,7 +37,7 @@ input {
 ::placeholder {
     color: #4a0099;
     text-align: center;
-    font-size: smaller;
+    font-size: small;
 }
 
 /* input:focus-visible {
@@ -68,4 +68,40 @@ img {
 #result {
     margin-top: 30px;
     color: white;
+}
+
+@media(min-width: 820px) {
+
+    body {
+        background: linear-gradient(#A7E6FF, #3ABEF9);
+    }
+
+    #container {
+        max-width: 820px;
+    }
+
+    p {
+        text-align: center;
+        font-size: 20px;
+    }
+
+    input {
+        padding: 3%;
+        font-size: larger;
+
+    }
+
+    button {
+        padding: 3%;
+        font-size: larger;
+    }
+
+    ::placeholder {
+        font-size: larger;
+    }
+
+    #result {
+        font-size: xx-large;
+    }
+
 }
